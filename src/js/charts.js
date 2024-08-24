@@ -1,5 +1,7 @@
-import Chart from 'chart.js/auto';
+// Remove this line:
+// import Chart from 'chart.js/auto';
 
+// Instead, rely on Chart.js being loaded globally
 const ctx = document.getElementById('myChart').getContext('2d');
 
 export function renderChart(workouts) {

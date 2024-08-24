@@ -1,4 +1,4 @@
-import { renderChart } from './chart.js';
+import { renderChart } from '../../src/js/charts.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const workoutForm = document.getElementById('workout-form');
