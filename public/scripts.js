@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const workoutList = document.getElementById('workout-list');
 
     // Array to hold the workout data
-    let workouts = [];
+    let workouts = JSON.parse(localStorage.getItem('workouts')) || [];
 
     // Function to handle form submission
     workoutForm.addEventListener('submit', (e) => {
@@ -29,6 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Add workout to array
         workouts.push(workout);
+
+        // Save to local storage
+        localStorage.setItem('workouts', JSON.stringify(workouts));
 
         // Clear form
         workoutForm.reset();
@@ -63,6 +66,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to delete a workout
     window.deleteWorkout = (index) => {
         workouts.splice(index, 1);
+
+        // Update local storage
+        localStorage.setItem('workouts', JSON.stringify(workouts));
+
         renderWorkoutList();
     };
+
+    // Initial render of the workout list
+    renderWorkoutList();
 });
