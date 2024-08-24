@@ -108,11 +108,13 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('edit-workout-duration').value = workout.duration;
 
         editModal.classList.remove('hidden');
+        editModal.style.display = 'flex';
     };
 
     // Function to close the edit modal
     function closeEditModal() {
         editModal.classList.add('hidden');
+        editModal.style.display = 'none';
         currentEditIndex = null;
     }
 
