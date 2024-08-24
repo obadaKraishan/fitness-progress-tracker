@@ -36,8 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Clear form
         workoutForm.reset();
 
-        // Update workout list
+        // Update workout list and chart
         renderWorkoutList();
+        renderChart(workouts);
     });
 
     // Function to render the workout list
@@ -70,9 +71,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update local storage
         localStorage.setItem('workouts', JSON.stringify(workouts));
 
+        // Re-render the workout list and chart
         renderWorkoutList();
+        renderChart(workouts);
     };
 
-    // Initial render of the workout list
+    // Initial render of the workout list and chart
     renderWorkoutList();
+    renderChart(workouts);
 });
